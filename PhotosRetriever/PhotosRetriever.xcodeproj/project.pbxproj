@@ -20,6 +20,7 @@
 		5773533B29E21CED00478E14 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533A29E21CED00478E14 /* NetworkError.swift */; };
 		5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533D29E21D2C00478E14 /* APIRequestProtocol.swift */; };
 		5773534129E21DE700478E14 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534029E21DE700478E14 /* APIClientProtocol.swift */; };
+		5773534329E223C100478E14 /* PageableRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534229E223C100478E14 /* PageableRequestProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		5773533A29E21CED00478E14 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5773533D29E21D2C00478E14 /* APIRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestProtocol.swift; sourceTree = "<group>"; };
 		5773534029E21DE700478E14 /* APIClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
+		5773534229E223C100478E14 /* PageableRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageableRequestProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				5773533D29E21D2C00478E14 /* APIRequestProtocol.swift */,
+				5773534229E223C100478E14 /* PageableRequestProtocol.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				5773530A29E2183400478E14 /* ViewController.swift in Sources */,
 				5773530629E2183400478E14 /* AppDelegate.swift in Sources */,
 				5773530829E2183400478E14 /* SceneDelegate.swift in Sources */,
+				5773534329E223C100478E14 /* PageableRequestProtocol.swift in Sources */,
 				5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */,
 				5773534129E21DE700478E14 /* APIClientProtocol.swift in Sources */,
 				5773533B29E21CED00478E14 /* NetworkError.swift in Sources */,
