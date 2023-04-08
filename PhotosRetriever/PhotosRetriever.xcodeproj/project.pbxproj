@@ -18,6 +18,7 @@
 		5773532929E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773532829E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift */; };
 		5773533629E21C8A00478E14 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533529E21C8A00478E14 /* HTTPMethods.swift */; };
 		5773533B29E21CED00478E14 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533A29E21CED00478E14 /* NetworkError.swift */; };
+		5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533D29E21D2C00478E14 /* APIRequestProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		5773532829E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRetrieverUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5773533529E21C8A00478E14 /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
 		5773533A29E21CED00478E14 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5773533D29E21D2C00478E14 /* APIRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		5773533829E21CA800478E14 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				5773533C29E21D1C00478E14 /* Request */,
 				5773533929E21CB400478E14 /* Enums */,
 			);
 			path = NetworkLayer;
@@ -155,6 +158,14 @@
 				5773533A29E21CED00478E14 /* NetworkError.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		5773533C29E21D1C00478E14 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				5773533D29E21D2C00478E14 /* APIRequestProtocol.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +303,7 @@
 				5773530A29E2183400478E14 /* ViewController.swift in Sources */,
 				5773530629E2183400478E14 /* AppDelegate.swift in Sources */,
 				5773530829E2183400478E14 /* SceneDelegate.swift in Sources */,
+				5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */,
 				5773533B29E21CED00478E14 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
