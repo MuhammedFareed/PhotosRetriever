@@ -17,6 +17,7 @@
 		5773532729E2183600478E14 /* PhotosRetrieverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773532629E2183600478E14 /* PhotosRetrieverUITests.swift */; };
 		5773532929E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773532829E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift */; };
 		5773533629E21C8A00478E14 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533529E21C8A00478E14 /* HTTPMethods.swift */; };
+		5773533B29E21CED00478E14 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533A29E21CED00478E14 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		5773532629E2183600478E14 /* PhotosRetrieverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRetrieverUITests.swift; sourceTree = "<group>"; };
 		5773532829E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRetrieverUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5773533529E21C8A00478E14 /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		5773533A29E21CED00478E14 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				5773533529E21C8A00478E14 /* HTTPMethods.swift */,
+				5773533A29E21CED00478E14 /* NetworkError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				5773530A29E2183400478E14 /* ViewController.swift in Sources */,
 				5773530629E2183400478E14 /* AppDelegate.swift in Sources */,
 				5773530829E2183400478E14 /* SceneDelegate.swift in Sources */,
+				5773533B29E21CED00478E14 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
