@@ -16,6 +16,7 @@
 		5773531D29E2183600478E14 /* PhotosRetrieverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773531C29E2183600478E14 /* PhotosRetrieverTests.swift */; };
 		5773532729E2183600478E14 /* PhotosRetrieverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773532629E2183600478E14 /* PhotosRetrieverUITests.swift */; };
 		5773532929E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773532829E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift */; };
+		5773533629E21C8A00478E14 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533529E21C8A00478E14 /* HTTPMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5773532229E2183600478E14 /* PhotosRetrieverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosRetrieverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5773532629E2183600478E14 /* PhotosRetrieverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRetrieverUITests.swift; sourceTree = "<group>"; };
 		5773532829E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRetrieverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5773533529E21C8A00478E14 /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		5773530429E2183400478E14 /* PhotosRetriever */ = {
 			isa = PBXGroup;
 			children = (
+				5773533729E21CA000478E14 /* Core */,
 				5773530529E2183400478E14 /* AppDelegate.swift */,
 				5773530729E2183400478E14 /* SceneDelegate.swift */,
 				5773530929E2183400478E14 /* ViewController.swift */,
@@ -125,6 +128,30 @@
 				5773532829E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift */,
 			);
 			path = PhotosRetrieverUITests;
+			sourceTree = "<group>";
+		};
+		5773533729E21CA000478E14 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5773533829E21CA800478E14 /* NetworkLayer */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5773533829E21CA800478E14 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				5773533929E21CB400478E14 /* Enums */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		5773533929E21CB400478E14 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				5773533529E21C8A00478E14 /* HTTPMethods.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5773533629E21C8A00478E14 /* HTTPMethods.swift in Sources */,
 				5773530A29E2183400478E14 /* ViewController.swift in Sources */,
 				5773530629E2183400478E14 /* AppDelegate.swift in Sources */,
 				5773530829E2183400478E14 /* SceneDelegate.swift in Sources */,
