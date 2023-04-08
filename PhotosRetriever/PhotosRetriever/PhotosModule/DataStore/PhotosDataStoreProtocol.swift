@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PhotosDataStoreProtocol: AnyObject {
-    func fetchPhotosList(onSuccess: @escaping ([Photo]) -> Void, onFailure: @escaping (Error?) -> Void)
+    func fetchPhotosList(pageNumber: Int, onSuccess: @escaping ([Photo]) -> Void, onFailure: @escaping (Error?) -> Void)
 }

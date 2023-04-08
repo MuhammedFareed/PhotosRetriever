@@ -14,8 +14,8 @@ class RemotePhotosDataStore: PhotosDataStoreProtocol {
         self.apiClient = apiClient
     }
     
-    func fetchPhotosList(onSuccess: @escaping ([Photo]) -> Void, onFailure: @escaping (Error?) -> Void) {
-        apiClient.start(withRequest: PhotosRequest.listPhotos(pageNumber: 1), responseType: [Photo].self, onSuccess: { photos in
+    func fetchPhotosList(pageNumber: Int, onSuccess: @escaping ([Photo]) -> Void, onFailure: @escaping (Error?) -> Void) {
+        apiClient.start(withRequest: PhotosRequest.listPhotos(pageNumber: pageNumber), responseType: [Photo].self, onSuccess: { photos in
             if let photosList = photos as? [Photo] {
                 onSuccess(photosList)
             } else {
