@@ -22,6 +22,7 @@
 		5773534129E21DE700478E14 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534029E21DE700478E14 /* APIClientProtocol.swift */; };
 		5773534329E223C100478E14 /* PageableRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534229E223C100478E14 /* PageableRequestProtocol.swift */; };
 		5773534529E2242500478E14 /* PhotosAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534429E2242500478E14 /* PhotosAPIClient.swift */; };
+		5773534929E224E100478E14 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534829E224E100478E14 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		5773534029E21DE700478E14 /* APIClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
 		5773534229E223C100478E14 /* PageableRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageableRequestProtocol.swift; sourceTree = "<group>"; };
 		5773534429E2242500478E14 /* PhotosAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPIClient.swift; sourceTree = "<group>"; };
+		5773534829E224E100478E14 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		5773530429E2183400478E14 /* PhotosRetriever */ = {
 			isa = PBXGroup;
 			children = (
+				5773534629E224A300478E14 /* PhotosModule */,
 				5773533729E21CA000478E14 /* Core */,
 				5773530529E2183400478E14 /* AppDelegate.swift */,
 				5773530729E2183400478E14 /* SceneDelegate.swift */,
@@ -183,6 +186,22 @@
 				5773534429E2242500478E14 /* PhotosAPIClient.swift */,
 			);
 			path = APIClient;
+			sourceTree = "<group>";
+		};
+		5773534629E224A300478E14 /* PhotosModule */ = {
+			isa = PBXGroup;
+			children = (
+				5773534729E224AB00478E14 /* Model */,
+			);
+			path = PhotosModule;
+			sourceTree = "<group>";
+		};
+		5773534729E224AB00478E14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5773534829E224E100478E14 /* Photo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +339,7 @@
 				5773530A29E2183400478E14 /* ViewController.swift in Sources */,
 				5773534529E2242500478E14 /* PhotosAPIClient.swift in Sources */,
 				5773530629E2183400478E14 /* AppDelegate.swift in Sources */,
+				5773534929E224E100478E14 /* Photo.swift in Sources */,
 				5773530829E2183400478E14 /* SceneDelegate.swift in Sources */,
 				5773534329E223C100478E14 /* PageableRequestProtocol.swift in Sources */,
 				5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */,
