@@ -23,6 +23,7 @@
 		5773534529E2242500478E14 /* PhotosAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534429E2242500478E14 /* PhotosAPIClient.swift */; };
 		5773534929E224E100478E14 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534829E224E100478E14 /* Photo.swift */; };
 		5773534C29E22DBF00478E14 /* PhotosRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534B29E22DBF00478E14 /* PhotosRequests.swift */; };
+		5773534F29E231ED00478E14 /* PhotosDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534E29E231ED00478E14 /* PhotosDataStoreProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		5773534429E2242500478E14 /* PhotosAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPIClient.swift; sourceTree = "<group>"; };
 		5773534829E224E100478E14 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		5773534B29E22DBF00478E14 /* PhotosRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRequests.swift; sourceTree = "<group>"; };
+		5773534E29E231ED00478E14 /* PhotosDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDataStoreProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 		5773534629E224A300478E14 /* PhotosModule */ = {
 			isa = PBXGroup;
 			children = (
+				5773534D29E230F500478E14 /* DataStore */,
 				5773534A29E22C9300478E14 /* Request */,
 				5773534729E224AB00478E14 /* Model */,
 			);
@@ -210,6 +213,14 @@
 				5773534B29E22DBF00478E14 /* PhotosRequests.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		5773534D29E230F500478E14 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				5773534E29E231ED00478E14 /* PhotosDataStoreProtocol.swift */,
+			);
+			path = DataStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +363,7 @@
 				5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */,
 				5773534129E21DE700478E14 /* APIClientProtocol.swift in Sources */,
 				5773534C29E22DBF00478E14 /* PhotosRequests.swift in Sources */,
+				5773534F29E231ED00478E14 /* PhotosDataStoreProtocol.swift in Sources */,
 				5773533B29E21CED00478E14 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
