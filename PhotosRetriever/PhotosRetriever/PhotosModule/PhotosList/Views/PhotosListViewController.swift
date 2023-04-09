@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol PhotosListViewControllerProtocol {
+protocol PhotosListViewControllerProtocol: UIViewController {
     func displayItems()
     func showItemDetails(_ item: ListItem)
 }
