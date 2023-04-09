@@ -13,7 +13,7 @@ class DownloaderImageView: UIImageView {
     private var imageCache: ImageCacherProtocol? = ImageCacher.shared
     private var currentUrl: URL?
     
-    func loadImage(from url: URL) {
+    func loadImage(from url: URL, completion: ((UIImage) -> Void)? = nil) {
         self.image = UIImage(named: "placeholder")
         currentUrl = url
         if let cachedImage = imageCache?.getImage(for: url) {
