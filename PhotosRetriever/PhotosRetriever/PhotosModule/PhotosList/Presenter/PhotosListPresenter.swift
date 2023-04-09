@@ -25,7 +25,7 @@ class PhotosListPresenter: PhotosListPresenterProtocol {
         interactor.fetchPhotos()
     }
     
-    func getItem(at index: Int) -> ListItem {
+    func getItem(at index: Int) -> ListItem? {
         guard let item = listItems[safe: index] else {
             return nil
         }
