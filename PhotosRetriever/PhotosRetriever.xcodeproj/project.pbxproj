@@ -35,6 +35,7 @@
 		5773536D29E2436000478E14 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5773536B29E2436000478E14 /* PhotoTableViewCell.xib */; };
 		57D4C80629E2469E004B4172 /* UIImageView+PhotosRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80529E2469E004B4172 /* UIImageView+PhotosRetriever.swift */; };
 		57D4C80929E2613D004B4172 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80829E2613D004B4172 /* ImageDownloader.swift */; };
+		57D4C80B29E2630C004B4172 /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80A29E2630C004B4172 /* ImageCacher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		5773536B29E2436000478E14 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		57D4C80529E2469E004B4172 /* UIImageView+PhotosRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+PhotosRetriever.swift"; sourceTree = "<group>"; };
 		57D4C80829E2613D004B4172 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		57D4C80A29E2630C004B4172 /* ImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				57D4C80829E2613D004B4172 /* ImageDownloader.swift */,
+				57D4C80A29E2630C004B4172 /* ImageCacher.swift */,
 			);
 			path = ImageLoader;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */,
 				5773536C29E2436000478E14 /* PhotoTableViewCell.swift in Sources */,
 				5773534129E21DE700478E14 /* APIClientProtocol.swift in Sources */,
+				57D4C80B29E2630C004B4172 /* ImageCacher.swift in Sources */,
 				5773535829E235F900478E14 /* ListItem.swift in Sources */,
 				5773535E29E23A4F00478E14 /* PhotosListInteractor.swift in Sources */,
 				5773534C29E22DBF00478E14 /* PhotosRequests.swift in Sources */,
