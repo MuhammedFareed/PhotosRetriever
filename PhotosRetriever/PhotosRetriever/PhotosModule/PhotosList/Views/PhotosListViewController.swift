@@ -7,24 +7,36 @@
 
 import UIKit
 
+protocol PhotosListViewControllerProtocol {
+    func displayItems()
+    func showItemDetails(_ item: ListItem)
+}
+
 class PhotosListViewController: UIViewController {
 
     @IBOutlet weak var photosListTableView: UITableView!
+    private var presenter: PhotosListPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupTableView()
+        presenter = PhotosListPresenter()
+        presenter?.fetchPhotos()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupTableView() {
+        
     }
-    */
-
 }
+
+extension PhotosListViewController: PhotosListViewControllerProtocol {
+    func displayItems() {
+        photosListTableView.reloadData()
+    }
+    
+    func showItemDetails(_ item: ListItem) {
+        
+    }
+}
+
