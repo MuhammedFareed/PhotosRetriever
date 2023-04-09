@@ -10,7 +10,7 @@ import Foundation
 struct Photo: Codable {
     let id: String
     let author: String
-    let url: String
+    let downloadUrl: String
     let width: Int
     let height: Int
 }
