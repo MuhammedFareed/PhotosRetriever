@@ -20,18 +20,18 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mVw-MY-X71">
                         <rect key="frame" x="0.0" y="0.0" width="321" height="120"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nne-rC-q65" customClass="DownloaderImageView" customModule="PhotosRetriever" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="321" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="YMR-Fh-GAW"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jT9-IG-kfW">
                                 <rect key="frame" x="16" y="4.0000000000000009" width="289" height="14.333333333333336"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nne-rC-q65">
-                                <rect key="frame" x="0.0" y="0.0" width="321" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="YMR-Fh-GAW"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
