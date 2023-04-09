@@ -27,6 +27,8 @@ class PhotoTableViewCell: UITableViewCell {
     
     func configure(withPhoto photo: Photo)  {
         authorNameLabel.text = "Author: \(photo.author)"
+        photoImageView.loadImage(urlString: photo.url)
+        addDropShadow()
     }
     
     private func addDropShadow() {
