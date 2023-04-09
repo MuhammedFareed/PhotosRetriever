@@ -13,7 +13,7 @@ class PhotoTableViewCell: UITableViewCell {
     @IBOutlet private weak var authorNameLabel: UILabel!
     @IBOutlet private weak var photoImageView: UIImageView!
     
-    static let reuseIdentifier: String = "photoCell"
+    static let reuseIdentifier: String = String(describing: PhotoTableViewCell.self)
     
     override func awakeFromNib() {
         super.awakeFromNib()

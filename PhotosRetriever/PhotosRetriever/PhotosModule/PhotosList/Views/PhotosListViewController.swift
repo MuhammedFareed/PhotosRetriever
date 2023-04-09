@@ -27,7 +27,8 @@ class PhotosListViewController: UIViewController {
     }
     
     private func setupTableView() {
-        photosListTableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.reuseIdentifier)
+        photosListTableView.register(
+            UINib(nibName: PhotoTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: PhotoTableViewCell.reuseIdentifier)
         photosListTableView.dataSource = self
         photosListTableView.delegate = self
     }
@@ -35,7 +36,9 @@ class PhotosListViewController: UIViewController {
 
 extension PhotosListViewController: PhotosListViewControllerProtocol {
     func displayItems() {
-        photosListTableView.reloadData()
+        DispatchQueue.main.async {
+            self.photosListTableView.reloadData()
+        }
     }
     
     func showItemDetails(_ item: ListItem) {
