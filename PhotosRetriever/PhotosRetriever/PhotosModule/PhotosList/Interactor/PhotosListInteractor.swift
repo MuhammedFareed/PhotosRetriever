@@ -17,6 +17,7 @@ class PhotosListInteractor: PhotosListInteractorProtocol {
     
     var listItems: [ListItem] = []
     var currentPageNumber = 1
+    weak var presenter: PhotosListPresenterProtocol?
     
     init(repository: PhotosRepositoryProtocol = PhotosRepository(), itemListBuilder: PhotosListBuilderProtocol = PhotosListBuilder()) {
         self.repository = repository
@@ -30,6 +31,7 @@ class PhotosListInteractor: PhotosListInteractorProtocol {
             self.currentPageNumber += 1
             let listItems = self.itemListBuilder.buildList(for: fetchedPhotos)
             self.listItems.append(contentsOf: listItems)
+            self.presenter?.displayItems(self.listItems)
         }, onFailure: { error in
             // handle failure case
         })
