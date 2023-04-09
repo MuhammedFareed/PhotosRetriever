@@ -9,7 +9,7 @@ import UIKit
 
 protocol PhotosListViewControllerProtocol: UIViewController {
     func displayItems()
-    func showItemDetails(_ item: ListItem)
+    func showPhotoDetails(_ photo: Photo)
 }
 
 class PhotosListViewController: UIViewController {
@@ -47,8 +47,10 @@ extension PhotosListViewController: PhotosListViewControllerProtocol {
         }
     }
     
-    func showItemDetails(_ item: ListItem) {
-        
+    func showPhotoDetails(_ photo: Photo) {
+        let detailsViewController = PhotoDetailsViewController.instantiate()
+        detailsViewController.setPhoto(photo)
+        navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
 
