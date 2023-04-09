@@ -26,7 +26,9 @@ class PhotosListViewController: UIViewController {
     }
     
     private func setupTableView() {
-        
+        photosListTableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: PhotoTableViewCell.reuseIdentifier)
+        photosListTableView.dataSource = self
+        photosListTableView.delegate = self
     }
 }
 
@@ -37,6 +39,35 @@ extension PhotosListViewController: PhotosListViewControllerProtocol {
     
     func showItemDetails(_ item: ListItem) {
         
+    }
+}
+
+extension PhotosListViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter?.numberOfItems() ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let item = presenter?.getItem(at: indexPath.row) else {
+            return UITableViewCell()
+        }
+        switch item.kind {
+        case .ad:
+            let adCell = UITableViewCell()
+            adCell.textLabel?.text = item.adMessage
+            return adCell
+        case .photo:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.reuseIdentifier) as? PhotoTableViewCell,
+                  let photo = item.photo else {
+                return UITableViewCell()
+            }
+            cell.configure(withPhoto: photo)
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectItem(at: indexPath.row)
     }
 }
 
