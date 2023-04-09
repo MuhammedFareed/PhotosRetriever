@@ -37,6 +37,10 @@
 		57D4C80929E2613D004B4172 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80829E2613D004B4172 /* ImageDownloader.swift */; };
 		57D4C80B29E2630C004B4172 /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80A29E2630C004B4172 /* ImageCacher.swift */; };
 		57D4C80D29E263C4004B4172 /* DownloaderImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80C29E263C4004B4172 /* DownloaderImageView.swift */; };
+		57D4C81129E26F05004B4172 /* DominantColorDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C81029E26F05004B4172 /* DominantColorDetector.swift */; };
+		57D4C81429E2702F004B4172 /* PhotoDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C81329E2702F004B4172 /* PhotoDetailsPresenter.swift */; };
+		57D4C81629E27175004B4172 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C81529E27175004B4172 /* PhotoDetailsViewController.swift */; };
+		57D4C81A29E273CE004B4172 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C81929E273CE004B4172 /* Storyboardable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,10 @@
 		57D4C80829E2613D004B4172 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		57D4C80A29E2630C004B4172 /* ImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
 		57D4C80C29E263C4004B4172 /* DownloaderImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderImageView.swift; sourceTree = "<group>"; };
+		57D4C81029E26F05004B4172 /* DominantColorDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominantColorDetector.swift; sourceTree = "<group>"; };
+		57D4C81329E2702F004B4172 /* PhotoDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsPresenter.swift; sourceTree = "<group>"; };
+		57D4C81529E27175004B4172 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		57D4C81929E273CE004B4172 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +226,7 @@
 		5773534629E224A300478E14 /* PhotosModule */ = {
 			isa = PBXGroup;
 			children = (
+				57D4C80E29E26E0B004B4172 /* PhotoDetails */,
 				5773535529E2354A00478E14 /* PhotosList */,
 				5773535229E2339000478E14 /* Repository */,
 				5773534D29E230F500478E14 /* DataStore */,
@@ -307,6 +316,7 @@
 		5773536229E23F7300478E14 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
+				57D4C81829E273B7004B4172 /* Storyboardable */,
 				57D4C80729E260F2004B4172 /* ImageLoader */,
 				5773536329E23F7A00478E14 /* Extensions */,
 			);
@@ -348,6 +358,48 @@
 				57D4C80C29E263C4004B4172 /* DownloaderImageView.swift */,
 			);
 			path = ImageLoader;
+			sourceTree = "<group>";
+		};
+		57D4C80E29E26E0B004B4172 /* PhotoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				57D4C81729E2717B004B4172 /* View */,
+				57D4C81229E2701B004B4172 /* Presenter */,
+				57D4C80F29E26EE8004B4172 /* DominantColorDetector */,
+			);
+			path = PhotoDetails;
+			sourceTree = "<group>";
+		};
+		57D4C80F29E26EE8004B4172 /* DominantColorDetector */ = {
+			isa = PBXGroup;
+			children = (
+				57D4C81029E26F05004B4172 /* DominantColorDetector.swift */,
+			);
+			path = DominantColorDetector;
+			sourceTree = "<group>";
+		};
+		57D4C81229E2701B004B4172 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				57D4C81329E2702F004B4172 /* PhotoDetailsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		57D4C81729E2717B004B4172 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57D4C81529E27175004B4172 /* PhotoDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57D4C81829E273B7004B4172 /* Storyboardable */ = {
+			isa = PBXGroup;
+			children = (
+				57D4C81929E273CE004B4172 /* Storyboardable.swift */,
+			);
+			path = Storyboardable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D4C81629E27175004B4172 /* PhotoDetailsViewController.swift in Sources */,
 				5773533629E21C8A00478E14 /* HTTPMethods.swift in Sources */,
 				5773534529E2242500478E14 /* PhotosAPIClient.swift in Sources */,
 				5773530629E2183400478E14 /* AppDelegate.swift in Sources */,
@@ -491,11 +544,13 @@
 				57D4C80D29E263C4004B4172 /* DownloaderImageView.swift in Sources */,
 				5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */,
 				5773536C29E2436000478E14 /* PhotoTableViewCell.swift in Sources */,
+				57D4C81129E26F05004B4172 /* DominantColorDetector.swift in Sources */,
 				5773534129E21DE700478E14 /* APIClientProtocol.swift in Sources */,
 				57D4C80B29E2630C004B4172 /* ImageCacher.swift in Sources */,
 				5773535829E235F900478E14 /* ListItem.swift in Sources */,
 				5773535E29E23A4F00478E14 /* PhotosListInteractor.swift in Sources */,
 				5773534C29E22DBF00478E14 /* PhotosRequests.swift in Sources */,
+				57D4C81A29E273CE004B4172 /* Storyboardable.swift in Sources */,
 				5773536529E23F9300478E14 /* Collection+PhotosRetriever.swift in Sources */,
 				5773534F29E231ED00478E14 /* PhotosDataStoreProtocol.swift in Sources */,
 				57D4C80929E2613D004B4172 /* ImageDownloader.swift in Sources */,
@@ -503,6 +558,7 @@
 				5773535B29E236C900478E14 /* PhotosListBuilder.swift in Sources */,
 				57D4C80629E2469E004B4172 /* UIImage+PhotosRetriever.swift in Sources */,
 				5773535429E233F200478E14 /* PhotosRepositroy.swift in Sources */,
+				57D4C81429E2702F004B4172 /* PhotoDetailsPresenter.swift in Sources */,
 				5773535129E2328500478E14 /* RemotePhotosDataStore.swift in Sources */,
 				5773533B29E21CED00478E14 /* NetworkError.swift in Sources */,
 			);

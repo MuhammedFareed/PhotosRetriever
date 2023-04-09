@@ -13,11 +13,12 @@ class DownloaderImageView: UIImageView {
     private var imageCache: ImageCacherProtocol? = ImageCacher.shared
     private var currentUrl: URL?
     
-    func loadImage(from url: URL) {
+    func loadImage(from url: URL, completion: ((UIImage?) -> Void)? = nil) {
         self.image = UIImage(named: "placeholder")
         currentUrl = url
         if let cachedImage = imageCache?.getImage(for: url) {
             self.image = cachedImage
+            completion?(cachedImage)
             return
         }
         let delay = 0.1 // in seconds
@@ -26,15 +27,17 @@ class DownloaderImageView: UIImageView {
                 guard let self = self, url == self.currentUrl else { return }
                 switch result {
                 case .success(let image):
+                    self.imageCache?.setImage(image, for: url)
                     DispatchQueue.main.async {
                         guard let resizedImage = image.resizedImage(maxWidth: self.frame.width) else {
                             return
                         }
                         self.image = resizedImage
-                        self.imageCache?.setImage(resizedImage, for: url)
                     }
+                    completion?(image)
                 case .failure(let error):
                     print("Failed to load image: \(error.localizedDescription)")
+                    completion?(nil)
                 }
             }
         }

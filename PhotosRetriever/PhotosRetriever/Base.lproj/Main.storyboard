@@ -46,7 +46,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="-196"/>
+            <point key="canvasLocation" x="718" y="-204"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="5Eg-xg-QbF">
+            <objects>
+                <viewController storyboardIdentifier="PhotoDetailsViewController" id="1TQ-DC-Ajd" customClass="PhotoDetailsViewController" customModule="PhotosRetriever" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8vy-YB-sPK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9S0-oT-FaX" customClass="DownloaderImageView" customModule="PhotosRetriever" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vpf-0w-NFU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9S0-oT-FaX" firstAttribute="top" secondItem="Vpf-0w-NFU" secondAttribute="top" id="5ri-wW-dRV"/>
+                            <constraint firstItem="Vpf-0w-NFU" firstAttribute="bottom" secondItem="9S0-oT-FaX" secondAttribute="bottom" id="F5W-QH-mdB"/>
+                            <constraint firstItem="Vpf-0w-NFU" firstAttribute="trailing" secondItem="9S0-oT-FaX" secondAttribute="trailing" id="FYE-rk-WMh"/>
+                            <constraint firstItem="9S0-oT-FaX" firstAttribute="leading" secondItem="Vpf-0w-NFU" secondAttribute="leading" id="SFg-8w-Kvf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="9S0-oT-FaX" id="AxC-A6-uTc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lvm-1P-13w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1532" y="-204"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G8M-pQ-Vwp">
