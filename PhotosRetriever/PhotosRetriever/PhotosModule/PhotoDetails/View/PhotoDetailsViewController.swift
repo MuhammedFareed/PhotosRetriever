@@ -11,9 +11,12 @@ class PhotoDetailsViewController: UIViewController {
     @IBOutlet weak var photoImageView: DownloaderImageView!
     
     private var photo: Photo?
+    private var presenter: PhotosDetailsPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter = PhotosDetailsPresenter()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,7 +29,10 @@ class PhotoDetailsViewController: UIViewController {
             guard let returnedImage = image else {
                 return
             }
-            
+            guard let color = self?.presenter?.detectColorIn(returnedImage) else {
+                return
+            }
+            self?.view.backgroundColor = color
         })
     }
     
