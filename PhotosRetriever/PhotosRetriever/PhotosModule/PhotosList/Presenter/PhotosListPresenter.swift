@@ -15,6 +15,7 @@ protocol PhotosListPresenterProtocol: AnyObject {
     func numberOfItems() -> Int
     func getItem(at index: Int) -> ListItem?
     func didSelectItem(at index: Int)
+    func showDetailsOf(_ photo: Photo)
 }
 
 class PhotosListPresenter: PhotosListPresenterProtocol {
@@ -56,6 +57,10 @@ class PhotosListPresenter: PhotosListPresenterProtocol {
     }
     
     func didSelectItem(at index: Int) {
-        return 
+        interactor.
+    }
+    
+    func showDetailsOf(_ photo: Photo) {
+        view?.showPhotoDetails(photo)
     }
 }
