@@ -9,6 +9,8 @@ import Foundation
 
 protocol PhotosListPresenterProtocol {
     func fetchPhotos()
+    func displayItems(_ items: [ListItem])
+    func numberOfItems() -> Int
     func getItem(at index: Int) -> ListItem?
     func didSelectItem(at index: Int)
 }
@@ -23,6 +25,14 @@ class PhotosListPresenter: PhotosListPresenterProtocol {
     
     func fetchPhotos() {
         interactor.fetchPhotos()
+    }
+    
+    func displayItems(_ items: [ListItem]) {
+        listItems = items
+    }
+    
+    func numberOfItems() -> Int {
+        return listItems.count
     }
     
     func getItem(at index: Int) -> ListItem? {
