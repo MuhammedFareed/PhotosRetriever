@@ -22,6 +22,7 @@ class PhotosListViewController: UIViewController {
 
         setupTableView()
         presenter = PhotosListPresenter()
+        presenter?.attachView(self)
         presenter?.fetchPhotos()
     }
     

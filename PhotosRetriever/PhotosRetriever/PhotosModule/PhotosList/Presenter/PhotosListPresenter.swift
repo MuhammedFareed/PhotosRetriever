@@ -35,6 +35,7 @@ class PhotosListPresenter: PhotosListPresenterProtocol {
     
     func displayItems(_ items: [ListItem]) {
         listItems = items
+        view?.displayItems()
     }
     
     func numberOfItems() -> Int {
