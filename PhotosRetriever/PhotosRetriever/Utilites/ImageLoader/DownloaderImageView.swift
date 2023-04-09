@@ -18,6 +18,7 @@ class DownloaderImageView: UIImageView {
         currentUrl = url
         if let cachedImage = imageCache?.getImage(for: url) {
             self.image = cachedImage
+            completion?(cachedImage)
             return
         }
         let delay = 0.1 // in seconds
