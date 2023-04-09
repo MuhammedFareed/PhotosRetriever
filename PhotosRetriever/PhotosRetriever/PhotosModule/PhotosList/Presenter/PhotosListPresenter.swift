@@ -57,7 +57,7 @@ class PhotosListPresenter: PhotosListPresenterProtocol {
     }
     
     func didSelectItem(at index: Int) {
-        interactor.
+        interactor.didSelectItemAt(index)
     }
     
     func showDetailsOf(_ photo: Photo) {
