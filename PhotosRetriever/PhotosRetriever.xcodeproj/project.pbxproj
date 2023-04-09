@@ -37,6 +37,7 @@
 		57D4C80929E2613D004B4172 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80829E2613D004B4172 /* ImageDownloader.swift */; };
 		57D4C80B29E2630C004B4172 /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80A29E2630C004B4172 /* ImageCacher.swift */; };
 		57D4C80D29E263C4004B4172 /* DownloaderImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80C29E263C4004B4172 /* DownloaderImageView.swift */; };
+		57D4C81129E26F05004B4172 /* DominantColorDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C81029E26F05004B4172 /* DominantColorDetector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		57D4C80829E2613D004B4172 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		57D4C80A29E2630C004B4172 /* ImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
 		57D4C80C29E263C4004B4172 /* DownloaderImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderImageView.swift; sourceTree = "<group>"; };
+		57D4C81029E26F05004B4172 /* DominantColorDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominantColorDetector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 		5773534629E224A300478E14 /* PhotosModule */ = {
 			isa = PBXGroup;
 			children = (
+				57D4C80E29E26E0B004B4172 /* PhotoDetails */,
 				5773535529E2354A00478E14 /* PhotosList */,
 				5773535229E2339000478E14 /* Repository */,
 				5773534D29E230F500478E14 /* DataStore */,
@@ -348,6 +351,22 @@
 				57D4C80C29E263C4004B4172 /* DownloaderImageView.swift */,
 			);
 			path = ImageLoader;
+			sourceTree = "<group>";
+		};
+		57D4C80E29E26E0B004B4172 /* PhotoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				57D4C80F29E26EE8004B4172 /* DominantColorDetector */,
+			);
+			path = PhotoDetails;
+			sourceTree = "<group>";
+		};
+		57D4C80F29E26EE8004B4172 /* DominantColorDetector */ = {
+			isa = PBXGroup;
+			children = (
+				57D4C81029E26F05004B4172 /* DominantColorDetector.swift */,
+			);
+			path = DominantColorDetector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +510,7 @@
 				57D4C80D29E263C4004B4172 /* DownloaderImageView.swift in Sources */,
 				5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */,
 				5773536C29E2436000478E14 /* PhotoTableViewCell.swift in Sources */,
+				57D4C81129E26F05004B4172 /* DominantColorDetector.swift in Sources */,
 				5773534129E21DE700478E14 /* APIClientProtocol.swift in Sources */,
 				57D4C80B29E2630C004B4172 /* ImageCacher.swift in Sources */,
 				5773535829E235F900478E14 /* ListItem.swift in Sources */,
