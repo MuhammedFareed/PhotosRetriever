@@ -51,7 +51,7 @@
         <!--Photo Details View Controller-->
         <scene sceneID="5Eg-xg-QbF">
             <objects>
-                <viewController id="1TQ-DC-Ajd" customClass="PhotoDetailsViewController" customModule="PhotosRetriever" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoDetailsViewController" id="1TQ-DC-Ajd" customClass="PhotoDetailsViewController" customModule="PhotosRetriever" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8vy-YB-sPK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
