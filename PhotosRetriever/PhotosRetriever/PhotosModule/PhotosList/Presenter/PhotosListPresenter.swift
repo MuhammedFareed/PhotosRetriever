@@ -8,6 +8,7 @@
 import Foundation
 
 protocol PhotosListPresenterProtocol {
+    func attachView(_ view: PhotosListViewControllerProtocol)
     func fetchPhotos()
     func displayItems(_ items: [ListItem])
     func numberOfItems() -> Int
@@ -18,9 +19,14 @@ protocol PhotosListPresenterProtocol {
 class PhotosListPresenter: PhotosListPresenterProtocol {
     private let interactor: PhotosListInteractorProtocol
     private var listItems: [ListItem] = []
+    private weak var view: PhotosListViewControllerProtocol?
     
     init(withInteractor interactor: PhotosListInteractorProtocol = PhotosListInteractor()) {
         self.interactor = interactor
+    }
+    
+    func attachView(_ view: PhotosListViewControllerProtocol) {
+        self.view = view
     }
     
     func fetchPhotos() {
