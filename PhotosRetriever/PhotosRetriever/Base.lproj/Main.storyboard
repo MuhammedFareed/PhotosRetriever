@@ -46,7 +46,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="-196"/>
+            <point key="canvasLocation" x="718" y="-204"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="5Eg-xg-QbF">
+            <objects>
+                <viewController id="1TQ-DC-Ajd" customClass="PhotoDetailsViewController" customModule="PhotosRetriever" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8vy-YB-sPK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9S0-oT-FaX" customClass="DownloaderImageView" customModule="PhotosRetriever" customModuleProvider="target">
+                                <rect key="frame" x="39.333333333333343" y="97.666666666666686" width="314.33333333333326" height="681.66666666666652"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vpf-0w-NFU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9S0-oT-FaX" firstAttribute="width" secondItem="8vy-YB-sPK" secondAttribute="width" multiplier="0.8" priority="250" id="6QR-Xz-Vee"/>
+                            <constraint firstItem="9S0-oT-FaX" firstAttribute="centerY" secondItem="Vpf-0w-NFU" secondAttribute="centerY" id="6iN-UE-Lcf"/>
+                            <constraint firstItem="9S0-oT-FaX" firstAttribute="height" secondItem="8vy-YB-sPK" secondAttribute="height" multiplier="0.8" priority="250" id="S8P-pS-LsD"/>
+                            <constraint firstItem="9S0-oT-FaX" firstAttribute="centerX" secondItem="Vpf-0w-NFU" secondAttribute="centerX" id="SSi-Ns-Um9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="9S0-oT-FaX" id="AxC-A6-uTc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lvm-1P-13w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1532" y="-204"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G8M-pQ-Vwp">
