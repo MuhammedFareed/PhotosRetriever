@@ -14,5 +14,5 @@ struct ListItem {
     }
     var kind: Kind
     let adMessage: String = "This is an ad"
-    var photo: Photo
+    var photo: Photo?
 }
