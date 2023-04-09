@@ -29,6 +29,7 @@
 		5773535829E235F900478E14 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773535729E235F900478E14 /* ListItem.swift */; };
 		5773535B29E236C900478E14 /* PhotosListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773535A29E236C900478E14 /* PhotosListBuilder.swift */; };
 		5773535E29E23A4F00478E14 /* PhotosListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773535D29E23A4F00478E14 /* PhotosListInteractor.swift */; };
+		5773536129E23E3000478E14 /* PhotosListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773536029E23E3000478E14 /* PhotosListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		5773535729E235F900478E14 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		5773535A29E236C900478E14 /* PhotosListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListBuilder.swift; sourceTree = "<group>"; };
 		5773535D29E23A4F00478E14 /* PhotosListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListInteractor.swift; sourceTree = "<group>"; };
+		5773536029E23E3000478E14 /* PhotosListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 		5773535529E2354A00478E14 /* PhotosList */ = {
 			isa = PBXGroup;
 			children = (
+				5773535F29E23D3200478E14 /* Presenter */,
 				5773535C29E2391F00478E14 /* Interactor */,
 				5773535929E236AE00478E14 /* ListBuilder */,
 				5773535629E2358A00478E14 /* ListItem */,
@@ -276,6 +279,14 @@
 				5773535D29E23A4F00478E14 /* PhotosListInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5773535F29E23D3200478E14 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5773536029E23E3000478E14 /* PhotosListPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +424,7 @@
 				5773530A29E2183400478E14 /* ViewController.swift in Sources */,
 				5773534529E2242500478E14 /* PhotosAPIClient.swift in Sources */,
 				5773530629E2183400478E14 /* AppDelegate.swift in Sources */,
+				5773536129E23E3000478E14 /* PhotosListPresenter.swift in Sources */,
 				5773534929E224E100478E14 /* Photo.swift in Sources */,
 				5773530829E2183400478E14 /* SceneDelegate.swift in Sources */,
 				5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */,
