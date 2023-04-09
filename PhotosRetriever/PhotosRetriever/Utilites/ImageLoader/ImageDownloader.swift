@@ -18,13 +18,18 @@ protocol ImageDownloaderProtocol {
 class ImageDownloader: ImageDownloaderProtocol {
     
     private let session: URLSession
+    private var currentTask: URLSessionDataTask?
     
     init(session: URLSession = URLSession.shared) {
         self.session = session
     }
     
     func loadImage(from url: URL, completion: @escaping (Result<UIImage, Error>) -> Void) {
-        let task = session.dataTask(with: url) { (data, response, error) in
+        if let runningTaskURL = currentTask?.originalRequest?.url, runningTaskURL == url {
+            return
+        }
+        currentTask?.cancel()
+        currentTask = session.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -35,6 +40,6 @@ class ImageDownloader: ImageDownloaderProtocol {
             }
             completion(.success(image))
         }
-        task.resume()
+        currentTask?.resume()
     }
 }
