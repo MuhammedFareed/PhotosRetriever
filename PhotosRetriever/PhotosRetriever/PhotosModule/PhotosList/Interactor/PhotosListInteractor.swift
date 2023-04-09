@@ -9,6 +9,7 @@ import Foundation
 
 protocol PhotosListInteractorProtocol {
     func fetchPhotos()
+    func didSelectItemAt(_ index: Int)
 }
 
 class PhotosListInteractor: PhotosListInteractorProtocol {
@@ -35,5 +36,13 @@ class PhotosListInteractor: PhotosListInteractorProtocol {
         }, onFailure: { error in
             // handle failure case
         })
+    }
+    
+    func didSelectItemAt(_ index: Int) {
+        guard let item = listItems[safe: index],
+              item.kind == .photo, let photo = item.photo else {
+            return
+        }
+        presenter?.showDetailsOf(photo)
     }
 }
