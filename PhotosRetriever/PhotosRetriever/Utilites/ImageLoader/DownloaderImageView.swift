@@ -26,12 +26,12 @@ class DownloaderImageView: UIImageView {
                 guard let self = self, url == self.currentUrl else { return }
                 switch result {
                 case .success(let image):
+                    self.imageCache?.setImage(image, for: url)
                     DispatchQueue.main.async {
                         guard let resizedImage = image.resizedImage(maxWidth: self.frame.width) else {
                             return
                         }
                         self.image = resizedImage
-                        self.imageCache?.setImage(resizedImage, for: url)
                     }
                 case .failure(let error):
                     print("Failed to load image: \(error.localizedDescription)")
