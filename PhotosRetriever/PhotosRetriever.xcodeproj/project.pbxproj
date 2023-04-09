@@ -27,6 +27,7 @@
 		5773535129E2328500478E14 /* RemotePhotosDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773535029E2328500478E14 /* RemotePhotosDataStore.swift */; };
 		5773535429E233F200478E14 /* PhotosRepositroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773535329E233F200478E14 /* PhotosRepositroy.swift */; };
 		5773535829E235F900478E14 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773535729E235F900478E14 /* ListItem.swift */; };
+		5773535B29E236C900478E14 /* PhotosListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773535A29E236C900478E14 /* PhotosListBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		5773535029E2328500478E14 /* RemotePhotosDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePhotosDataStore.swift; sourceTree = "<group>"; };
 		5773535329E233F200478E14 /* PhotosRepositroy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepositroy.swift; sourceTree = "<group>"; };
 		5773535729E235F900478E14 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		5773535A29E236C900478E14 /* PhotosListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 		5773535529E2354A00478E14 /* PhotosList */ = {
 			isa = PBXGroup;
 			children = (
+				5773535929E236AE00478E14 /* ListBuilder */,
 				5773535629E2358A00478E14 /* ListItem */,
 			);
 			path = PhotosList;
@@ -254,6 +257,14 @@
 				5773535729E235F900478E14 /* ListItem.swift */,
 			);
 			path = ListItem;
+			sourceTree = "<group>";
+		};
+		5773535929E236AE00478E14 /* ListBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				5773535A29E236C900478E14 /* PhotosListBuilder.swift */,
+			);
+			path = ListBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +409,7 @@
 				5773535829E235F900478E14 /* ListItem.swift in Sources */,
 				5773534C29E22DBF00478E14 /* PhotosRequests.swift in Sources */,
 				5773534F29E231ED00478E14 /* PhotosDataStoreProtocol.swift in Sources */,
+				5773535B29E236C900478E14 /* PhotosListBuilder.swift in Sources */,
 				5773535429E233F200478E14 /* PhotosRepositroy.swift in Sources */,
 				5773535129E2328500478E14 /* RemotePhotosDataStore.swift in Sources */,
 				5773533B29E21CED00478E14 /* NetworkError.swift in Sources */,
