@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PhotosListPresenterProtocol {
+protocol PhotosListPresenterProtocol: AnyObject {
     func attachView(_ view: PhotosListViewControllerProtocol)
     func fetchPhotos()
     func displayItems(_ items: [ListItem])
@@ -23,6 +23,7 @@ class PhotosListPresenter: PhotosListPresenterProtocol {
     
     init(withInteractor interactor: PhotosListInteractorProtocol = PhotosListInteractor()) {
         self.interactor = interactor
+        (interactor as? PhotosListInteractor)?.presenter = self
     }
     
     func attachView(_ view: PhotosListViewControllerProtocol) {
