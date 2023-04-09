@@ -30,6 +30,7 @@
 		5773535B29E236C900478E14 /* PhotosListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773535A29E236C900478E14 /* PhotosListBuilder.swift */; };
 		5773535E29E23A4F00478E14 /* PhotosListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773535D29E23A4F00478E14 /* PhotosListInteractor.swift */; };
 		5773536129E23E3000478E14 /* PhotosListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773536029E23E3000478E14 /* PhotosListPresenter.swift */; };
+		5773536529E23F9300478E14 /* Collection+PhotosRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773536429E23F9300478E14 /* Collection+PhotosRetriever.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		5773535A29E236C900478E14 /* PhotosListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListBuilder.swift; sourceTree = "<group>"; };
 		5773535D29E23A4F00478E14 /* PhotosListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListInteractor.swift; sourceTree = "<group>"; };
 		5773536029E23E3000478E14 /* PhotosListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListPresenter.swift; sourceTree = "<group>"; };
+		5773536429E23F9300478E14 /* Collection+PhotosRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+PhotosRetriever.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				5773534629E224A300478E14 /* PhotosModule */,
 				5773533729E21CA000478E14 /* Core */,
+				5773536229E23F7300478E14 /* Utilites */,
 				5773530529E2183400478E14 /* AppDelegate.swift */,
 				5773530729E2183400478E14 /* SceneDelegate.swift */,
 				5773530929E2183400478E14 /* ViewController.swift */,
@@ -289,6 +292,22 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		5773536229E23F7300478E14 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				5773536329E23F7A00478E14 /* Extensions */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
+		5773536329E23F7A00478E14 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5773536429E23F9300478E14 /* Collection+PhotosRetriever.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -432,6 +451,7 @@
 				5773535829E235F900478E14 /* ListItem.swift in Sources */,
 				5773535E29E23A4F00478E14 /* PhotosListInteractor.swift in Sources */,
 				5773534C29E22DBF00478E14 /* PhotosRequests.swift in Sources */,
+				5773536529E23F9300478E14 /* Collection+PhotosRetriever.swift in Sources */,
 				5773534F29E231ED00478E14 /* PhotosDataStoreProtocol.swift in Sources */,
 				5773535B29E236C900478E14 /* PhotosListBuilder.swift in Sources */,
 				5773535429E233F200478E14 /* PhotosRepositroy.swift in Sources */,
