@@ -31,6 +31,8 @@
 		5773536129E23E3000478E14 /* PhotosListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773536029E23E3000478E14 /* PhotosListPresenter.swift */; };
 		5773536529E23F9300478E14 /* Collection+PhotosRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773536429E23F9300478E14 /* Collection+PhotosRetriever.swift */; };
 		5773536829E241EB00478E14 /* PhotosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773536729E241EB00478E14 /* PhotosListViewController.swift */; };
+		5773536C29E2436000478E14 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773536A29E2436000478E14 /* PhotoTableViewCell.swift */; };
+		5773536D29E2436000478E14 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5773536B29E2436000478E14 /* PhotoTableViewCell.xib */; };
 		57D4C80629E2469E004B4172 /* UIImageView+PhotosRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80529E2469E004B4172 /* UIImageView+PhotosRetriever.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		5773536029E23E3000478E14 /* PhotosListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListPresenter.swift; sourceTree = "<group>"; };
 		5773536429E23F9300478E14 /* Collection+PhotosRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+PhotosRetriever.swift"; sourceTree = "<group>"; };
 		5773536729E241EB00478E14 /* PhotosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewController.swift; sourceTree = "<group>"; };
+		5773536A29E2436000478E14 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		5773536B29E2436000478E14 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		57D4C80529E2469E004B4172 /* UIImageView+PhotosRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+PhotosRetriever.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -314,9 +318,19 @@
 		5773536629E241A100478E14 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5773536929E2433E00478E14 /* Cells */,
 				5773536729E241EB00478E14 /* PhotosListViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5773536929E2433E00478E14 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5773536A29E2436000478E14 /* PhotoTableViewCell.swift */,
+				5773536B29E2436000478E14 /* PhotoTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5773536D29E2436000478E14 /* PhotoTableViewCell.xib in Resources */,
 				5773531229E2183500478E14 /* LaunchScreen.storyboard in Resources */,
 				5773530F29E2183500478E14 /* Assets.xcassets in Resources */,
 				5773530D29E2183400478E14 /* Main.storyboard in Resources */,
@@ -457,6 +472,7 @@
 				5773534929E224E100478E14 /* Photo.swift in Sources */,
 				5773530829E2183400478E14 /* SceneDelegate.swift in Sources */,
 				5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */,
+				5773536C29E2436000478E14 /* PhotoTableViewCell.swift in Sources */,
 				5773534129E21DE700478E14 /* APIClientProtocol.swift in Sources */,
 				5773535829E235F900478E14 /* ListItem.swift in Sources */,
 				5773535E29E23A4F00478E14 /* PhotosListInteractor.swift in Sources */,
