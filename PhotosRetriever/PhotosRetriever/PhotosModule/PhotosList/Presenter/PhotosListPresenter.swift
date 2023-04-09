@@ -11,6 +11,7 @@ protocol PhotosListPresenterProtocol: AnyObject {
     func attachView(_ view: PhotosListViewControllerProtocol)
     func fetchPhotos()
     func displayItems(_ items: [ListItem])
+    func didDisplayLastItem()
     func numberOfItems() -> Int
     func getItem(at index: Int) -> ListItem?
     func didSelectItem(at index: Int)
@@ -37,6 +38,10 @@ class PhotosListPresenter: PhotosListPresenterProtocol {
     func displayItems(_ items: [ListItem]) {
         listItems = items
         view?.displayItems()
+    }
+    
+    func didDisplayLastItem() {
+        interactor.fetchPhotos()
     }
     
     func numberOfItems() -> Int {
