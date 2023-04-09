@@ -34,6 +34,7 @@
 		5773536C29E2436000478E14 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773536A29E2436000478E14 /* PhotoTableViewCell.swift */; };
 		5773536D29E2436000478E14 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5773536B29E2436000478E14 /* PhotoTableViewCell.xib */; };
 		57D4C80629E2469E004B4172 /* UIImageView+PhotosRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80529E2469E004B4172 /* UIImageView+PhotosRetriever.swift */; };
+		57D4C80929E2613D004B4172 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80829E2613D004B4172 /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		5773536A29E2436000478E14 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		5773536B29E2436000478E14 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		57D4C80529E2469E004B4172 /* UIImageView+PhotosRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+PhotosRetriever.swift"; sourceTree = "<group>"; };
+		57D4C80829E2613D004B4172 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 		5773536229E23F7300478E14 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
+				57D4C80729E260F2004B4172 /* ImageLoader */,
 				5773536329E23F7A00478E14 /* Extensions */,
 			);
 			path = Utilites;
@@ -331,6 +334,14 @@
 				5773536B29E2436000478E14 /* PhotoTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		57D4C80729E260F2004B4172 /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				57D4C80829E2613D004B4172 /* ImageDownloader.swift */,
+			);
+			path = ImageLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +490,7 @@
 				5773534C29E22DBF00478E14 /* PhotosRequests.swift in Sources */,
 				5773536529E23F9300478E14 /* Collection+PhotosRetriever.swift in Sources */,
 				5773534F29E231ED00478E14 /* PhotosDataStoreProtocol.swift in Sources */,
+				57D4C80929E2613D004B4172 /* ImageDownloader.swift in Sources */,
 				5773536829E241EB00478E14 /* PhotosListViewController.swift in Sources */,
 				5773535B29E236C900478E14 /* PhotosListBuilder.swift in Sources */,
 				57D4C80629E2469E004B4172 /* UIImageView+PhotosRetriever.swift in Sources */,
