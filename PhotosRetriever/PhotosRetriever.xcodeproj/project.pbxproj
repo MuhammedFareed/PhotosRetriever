@@ -31,6 +31,7 @@
 		5773536129E23E3000478E14 /* PhotosListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773536029E23E3000478E14 /* PhotosListPresenter.swift */; };
 		5773536529E23F9300478E14 /* Collection+PhotosRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773536429E23F9300478E14 /* Collection+PhotosRetriever.swift */; };
 		5773536829E241EB00478E14 /* PhotosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773536729E241EB00478E14 /* PhotosListViewController.swift */; };
+		57D4C80629E2469E004B4172 /* UIImageView+PhotosRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80529E2469E004B4172 /* UIImageView+PhotosRetriever.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		5773536029E23E3000478E14 /* PhotosListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListPresenter.swift; sourceTree = "<group>"; };
 		5773536429E23F9300478E14 /* Collection+PhotosRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+PhotosRetriever.swift"; sourceTree = "<group>"; };
 		5773536729E241EB00478E14 /* PhotosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewController.swift; sourceTree = "<group>"; };
+		57D4C80529E2469E004B4172 /* UIImageView+PhotosRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+PhotosRetriever.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				5773536429E23F9300478E14 /* Collection+PhotosRetriever.swift */,
+				57D4C80529E2469E004B4172 /* UIImageView+PhotosRetriever.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				5773534F29E231ED00478E14 /* PhotosDataStoreProtocol.swift in Sources */,
 				5773536829E241EB00478E14 /* PhotosListViewController.swift in Sources */,
 				5773535B29E236C900478E14 /* PhotosListBuilder.swift in Sources */,
+				57D4C80629E2469E004B4172 /* UIImageView+PhotosRetriever.swift in Sources */,
 				5773535429E233F200478E14 /* PhotosRepositroy.swift in Sources */,
 				5773535129E2328500478E14 /* RemotePhotosDataStore.swift in Sources */,
 				5773533B29E21CED00478E14 /* NetworkError.swift in Sources */,
