@@ -9,7 +9,7 @@ import Foundation
 
 protocol PhotosListPresenterProtocol {
     func fetchPhotos()
-    func getItem(at index: Int) -> ListItem
+    func getItem(at index: Int) -> ListItem?
     func didSelectItem(at index: Int)
 }
 
@@ -26,7 +26,10 @@ class PhotosListPresenter: PhotosListPresenterProtocol {
     }
     
     func getItem(at index: Int) -> ListItem {
-        return listItems[0]
+        guard let item = listItems[safe: index] else {
+            return nil
+        }
+        return item
     }
     
     func didSelectItem(at index: Int) {
