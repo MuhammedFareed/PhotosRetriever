@@ -16,6 +16,7 @@ class PhotosListViewController: UIViewController {
 
     @IBOutlet weak var photosListTableView: UITableView!
     private var presenter: PhotosListPresenterProtocol?
+    private var currentContentOffset: CGPoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +37,13 @@ class PhotosListViewController: UIViewController {
 
 extension PhotosListViewController: PhotosListViewControllerProtocol {
     func displayItems() {
-        DispatchQueue.main.async {
-            self.photosListTableView.reloadData()
+        DispatchQueue.main.async { [weak self] in 
+            self?.photosListTableView.reloadData()
+            self?.photosListTableView.layoutIfNeeded()
+            guard let contentOffset = self?.currentContentOffset else {
+                return
+            }
+            self?.photosListTableView.setContentOffset(contentOffset, animated: false)
         }
     }
     
@@ -72,6 +78,15 @@ extension PhotosListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didSelectItem(at: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let numberOfItems = presenter?.numberOfItems() ?? 0
+        guard indexPath.row == numberOfItems - 1 else {
+            return
+        }
+        currentContentOffset = tableView.contentOffset
+        presenter?.didDisplayLastItem()
     }
 }
 
