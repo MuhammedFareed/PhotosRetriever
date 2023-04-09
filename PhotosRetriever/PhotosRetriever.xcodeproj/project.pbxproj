@@ -39,6 +39,7 @@
 		57D4C80D29E263C4004B4172 /* DownloaderImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C80C29E263C4004B4172 /* DownloaderImageView.swift */; };
 		57D4C81129E26F05004B4172 /* DominantColorDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C81029E26F05004B4172 /* DominantColorDetector.swift */; };
 		57D4C81429E2702F004B4172 /* PhotoDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C81329E2702F004B4172 /* PhotoDetailsPresenter.swift */; };
+		57D4C81A29E273CE004B4172 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4C81929E273CE004B4172 /* Storyboardable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		57D4C80C29E263C4004B4172 /* DownloaderImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderImageView.swift; sourceTree = "<group>"; };
 		57D4C81029E26F05004B4172 /* DominantColorDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominantColorDetector.swift; sourceTree = "<group>"; };
 		57D4C81329E2702F004B4172 /* PhotoDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsPresenter.swift; sourceTree = "<group>"; };
+		57D4C81929E273CE004B4172 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 		5773536229E23F7300478E14 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
+				57D4C81829E273B7004B4172 /* Storyboardable */,
 				57D4C80729E260F2004B4172 /* ImageLoader */,
 				5773536329E23F7A00478E14 /* Extensions */,
 			);
@@ -378,6 +381,14 @@
 				57D4C81329E2702F004B4172 /* PhotoDetailsPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		57D4C81829E273B7004B4172 /* Storyboardable */ = {
+			isa = PBXGroup;
+			children = (
+				57D4C81929E273CE004B4172 /* Storyboardable.swift */,
+			);
+			path = Storyboardable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,6 +538,7 @@
 				5773535829E235F900478E14 /* ListItem.swift in Sources */,
 				5773535E29E23A4F00478E14 /* PhotosListInteractor.swift in Sources */,
 				5773534C29E22DBF00478E14 /* PhotosRequests.swift in Sources */,
+				57D4C81A29E273CE004B4172 /* Storyboardable.swift in Sources */,
 				5773536529E23F9300478E14 /* Collection+PhotosRetriever.swift in Sources */,
 				5773534F29E231ED00478E14 /* PhotosDataStoreProtocol.swift in Sources */,
 				57D4C80929E2613D004B4172 /* ImageDownloader.swift in Sources */,
