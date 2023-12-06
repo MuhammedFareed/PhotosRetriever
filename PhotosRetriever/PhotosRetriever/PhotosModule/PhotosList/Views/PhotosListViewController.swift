@@ -39,11 +39,10 @@ extension PhotosListViewController: PhotosListViewControllerProtocol {
     func displayItems() {
         DispatchQueue.main.async { [weak self] in 
             self?.photosListTableView.reloadData()
-            self?.photosListTableView.layoutIfNeeded()
             guard let contentOffset = self?.currentContentOffset else {
                 return
             }
-            self?.photosListTableView.setContentOffset(contentOffset, animated: false)
+            self?.photosListTableView.setContentOffset(contentOffset, animated: true)
         }
     }
     
