@@ -19,7 +19,6 @@ class PhotoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
-        
         addDropShadow()
     }
 
