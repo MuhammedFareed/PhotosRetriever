@@ -8,7 +8,7 @@
 import UIKit
 
 class PhotoDetailsViewController: UIViewController {
-    @IBOutlet weak var photoImageView: DownloaderImageView!
+    @IBOutlet private weak var photoImageView: DownloaderImageView!
     
     private var photo: Photo?
     private var presenter: PhotosDetailsPresenterProtocol?

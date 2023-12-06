@@ -14,7 +14,7 @@ protocol PhotosListViewControllerProtocol: UIViewController {
 
 class PhotosListViewController: UIViewController {
 
-    @IBOutlet weak var photosListTableView: UITableView!
+    @IBOutlet private weak var photosListTableView: UITableView!
     private var presenter: PhotosListPresenterProtocol?
     private var currentContentOffset: CGPoint?
     
