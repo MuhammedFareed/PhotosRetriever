@@ -17,28 +17,27 @@ class DownloaderImageView: UIImageView {
         self.image = UIImage(named: "placeholder")
         currentUrl = url
         if let cachedImage = imageCache?.getImage(for: url) {
-            self.image = cachedImage
+            DispatchQueue.main.async { [weak self] in
+                self?.image = cachedImage
+            }
             completion?(cachedImage)
             return
         }
-        let delay = 0.1 // in seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
-            self?.imageLoader?.loadImage(from: url) { [weak self] (result) in
-                guard let self = self, url == self.currentUrl else { return }
-                switch result {
-                case .success(let image):
-                    self.imageCache?.setImage(image, for: url)
-                    DispatchQueue.main.async {
-                        guard let resizedImage = image.resizedImage(maxWidth: self.frame.width) else {
-                            return
-                        }
-                        self.image = resizedImage
+        imageLoader?.loadImage(from: url) { [weak self] (result) in
+            guard let self = self, url == self.currentUrl else { return }
+            switch result {
+            case .success(let image):
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+                    guard let resizedImage = image.resizedImage(maxWidth: self.frame.width) else {
+                        return
                     }
-                    completion?(image)
-                case .failure(let error):
-                    print("Failed to load image: \(error.localizedDescription)")
-                    completion?(nil)
+                    self.image = resizedImage
+                    self.imageCache?.setImage(resizedImage, for: url)
                 }
+                completion?(image)
+            case .failure(let error):
+                print("Failed to load image: \(error.localizedDescription)")
+                completion?(nil)
             }
         }
     }

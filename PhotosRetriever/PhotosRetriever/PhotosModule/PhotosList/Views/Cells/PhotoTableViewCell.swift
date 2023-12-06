@@ -19,6 +19,8 @@ class PhotoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         selectionStyle = .none
+        
+        addDropShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,7 +30,7 @@ class PhotoTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-//        photoImageView.cancelImageDownload()
+        photoImageView.image = nil
     }
     
     func configure(withPhoto photo: Photo)  {
@@ -36,7 +38,6 @@ class PhotoTableViewCell: UITableViewCell {
         if let url = URL(string: photo.downloadUrl) {
             photoImageView.loadImage(from: url)
         }
-        addDropShadow()
     }
     
     private func addDropShadow() {
