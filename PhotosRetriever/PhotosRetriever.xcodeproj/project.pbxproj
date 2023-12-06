@@ -17,9 +17,9 @@
 		5773532929E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773532829E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift */; };
 		5773533629E21C8A00478E14 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533529E21C8A00478E14 /* HTTPMethods.swift */; };
 		5773533B29E21CED00478E14 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533A29E21CED00478E14 /* NetworkError.swift */; };
-		5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533D29E21D2C00478E14 /* APIRequestProtocol.swift */; };
-		5773534129E21DE700478E14 /* APIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534029E21DE700478E14 /* APIClientProtocol.swift */; };
-		5773534529E2242500478E14 /* PhotosAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534429E2242500478E14 /* PhotosAPIClient.swift */; };
+		5773533E29E21D2C00478E14 /* RESTAPIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773533D29E21D2C00478E14 /* RESTAPIRequestProtocol.swift */; };
+		5773534129E21DE700478E14 /* RESTAPIClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534029E21DE700478E14 /* RESTAPIClientProtocol.swift */; };
+		5773534529E2242500478E14 /* PhotosRESTAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534429E2242500478E14 /* PhotosRESTAPIClient.swift */; };
 		5773534929E224E100478E14 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534829E224E100478E14 /* Photo.swift */; };
 		5773534C29E22DBF00478E14 /* PhotosRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534B29E22DBF00478E14 /* PhotosRequests.swift */; };
 		5773534F29E231ED00478E14 /* PhotosDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5773534E29E231ED00478E14 /* PhotosDataStoreProtocol.swift */; };
@@ -75,9 +75,9 @@
 		5773532829E2183600478E14 /* PhotosRetrieverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRetrieverUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5773533529E21C8A00478E14 /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
 		5773533A29E21CED00478E14 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		5773533D29E21D2C00478E14 /* APIRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestProtocol.swift; sourceTree = "<group>"; };
-		5773534029E21DE700478E14 /* APIClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientProtocol.swift; sourceTree = "<group>"; };
-		5773534429E2242500478E14 /* PhotosAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPIClient.swift; sourceTree = "<group>"; };
+		5773533D29E21D2C00478E14 /* RESTAPIRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTAPIRequestProtocol.swift; sourceTree = "<group>"; };
+		5773534029E21DE700478E14 /* RESTAPIClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTAPIClientProtocol.swift; sourceTree = "<group>"; };
+		5773534429E2242500478E14 /* PhotosRESTAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRESTAPIClient.swift; sourceTree = "<group>"; };
 		5773534829E224E100478E14 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		5773534B29E22DBF00478E14 /* PhotosRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRequests.swift; sourceTree = "<group>"; };
 		5773534E29E231ED00478E14 /* PhotosDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDataStoreProtocol.swift; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 		5773533C29E21D1C00478E14 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				5773533D29E21D2C00478E14 /* APIRequestProtocol.swift */,
+				5773533D29E21D2C00478E14 /* RESTAPIRequestProtocol.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -217,8 +217,8 @@
 		5773533F29E21D5700478E14 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
-				5773534029E21DE700478E14 /* APIClientProtocol.swift */,
-				5773534429E2242500478E14 /* PhotosAPIClient.swift */,
+				5773534029E21DE700478E14 /* RESTAPIClientProtocol.swift */,
+				5773534429E2242500478E14 /* PhotosRESTAPIClient.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -536,16 +536,16 @@
 			files = (
 				57D4C81629E27175004B4172 /* PhotoDetailsViewController.swift in Sources */,
 				5773533629E21C8A00478E14 /* HTTPMethods.swift in Sources */,
-				5773534529E2242500478E14 /* PhotosAPIClient.swift in Sources */,
+				5773534529E2242500478E14 /* PhotosRESTAPIClient.swift in Sources */,
 				5773530629E2183400478E14 /* AppDelegate.swift in Sources */,
 				5773536129E23E3000478E14 /* PhotosListPresenter.swift in Sources */,
 				5773534929E224E100478E14 /* Photo.swift in Sources */,
 				5773530829E2183400478E14 /* SceneDelegate.swift in Sources */,
 				57D4C80D29E263C4004B4172 /* DownloaderImageView.swift in Sources */,
-				5773533E29E21D2C00478E14 /* APIRequestProtocol.swift in Sources */,
+				5773533E29E21D2C00478E14 /* RESTAPIRequestProtocol.swift in Sources */,
 				5773536C29E2436000478E14 /* PhotoTableViewCell.swift in Sources */,
 				57D4C81129E26F05004B4172 /* DominantColorDetector.swift in Sources */,
-				5773534129E21DE700478E14 /* APIClientProtocol.swift in Sources */,
+				5773534129E21DE700478E14 /* RESTAPIClientProtocol.swift in Sources */,
 				57D4C80B29E2630C004B4172 /* ImageCacher.swift in Sources */,
 				5773535829E235F900478E14 /* ListItem.swift in Sources */,
 				5773535E29E23A4F00478E14 /* PhotosListInteractor.swift in Sources */,

@@ -10,21 +10,31 @@ import Foundation
 typealias NetworkSuccess = (Codable) -> Void
 typealias NetworkFailure = (Error) -> Void
 
-protocol APIClient {
-    var session: URLSession { get set }
+protocol RESTAPICaller {
+    func call<T: Codable>(url: String,withRequest request: APIRequestProtocol, responseType: T.Type, onSuccess: @escaping NetworkSuccess, onFailure: @escaping NetworkFailure)
+}
+
+protocol RESTAPIClient {
+    var caller: RESTAPICaller { get set }
     var baseURL: String { get set }
     func start<T: Codable>(withRequest request: APIRequestProtocol, responseType: T.Type, onSuccess: @escaping NetworkSuccess, onFailure: @escaping NetworkFailure)
 }
 
-extension APIClient {
+extension RESTAPIClient {
     func start<T: Codable>(withRequest request: APIRequestProtocol, responseType: T.Type, onSuccess: @escaping NetworkSuccess, onFailure: @escaping NetworkFailure) {
-        let url = URL(string: "\(baseURL)/\(request.path)")
+        caller.call(url: baseURL, withRequest: request, responseType: responseType, onSuccess: onSuccess, onFailure: onFailure)
+    }
+}
+
+extension URLSession: RESTAPICaller {
+    func call<T>(url: String, withRequest request: APIRequestProtocol, responseType: T.Type, onSuccess: @escaping NetworkSuccess, onFailure: @escaping NetworkFailure) where T : Decodable, T : Encodable {
+        let url = URL(string: "\(url)/\(request.path)")
         let urlRequest = NSMutableURLRequest()
         urlRequest.url = url
         urlRequest.httpMethod = request.httpMethod.rawValue
         urlRequest.allHTTPHeaderFields = request.headers
         
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: { data, response, error in
+        let task = dataTask(with: urlRequest as URLRequest, completionHandler: { data, response, error in
             if error != nil {
                 onFailure(error!)
             } else {
@@ -46,4 +56,3 @@ extension APIClient {
         task.resume()
     }
 }
-

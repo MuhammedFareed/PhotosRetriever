@@ -7,11 +7,11 @@
 
 import Foundation
 
-class PhotosAPIClient: APIClient {
+class PhotosRESTAPIClient: RESTAPIClient {
     var baseURL: String = "https://picsum.photos/v2/"
-    var session: URLSession
+    var caller: RESTAPICaller
     
-    init(withSession session: URLSession = URLSession.shared) {
-        self.session = session
+    init(withCaller caller: RESTAPICaller = URLSession.shared) {
+        self.caller = caller
     }
 }

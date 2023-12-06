@@ -8,9 +8,9 @@
 import Foundation
 
 class RemotePhotosDataStore: PhotosDataStoreProtocol {
-    var apiClient: APIClient
+    var apiClient: RESTAPIClient
     
-    init(withAPIClient apiClient: APIClient = PhotosAPIClient()) {
+    init(withAPIClient apiClient: RESTAPIClient = PhotosRESTAPIClient()) {
         self.apiClient = apiClient
     }
     
