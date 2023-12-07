@@ -15,7 +15,7 @@ protocol ImageDownloaderProtocol {
     func loadImage(from url: URL, completion: @escaping (Result<UIImage, Error>) -> Void)
 }
 
-class ImageDownloader: ImageDownloaderProtocol {
+class URLSessionImageDownloader: ImageDownloaderProtocol {
     
     private let session: URLSession
     private var currentTask: URLSessionDataTask?

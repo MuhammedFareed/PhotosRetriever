@@ -9,21 +9,29 @@ import UIKit
 
 class DownloaderImageView: UIImageView {
     
-    private var imageLoader: ImageDownloaderProtocol? = ImageDownloader()
-    private var imageCache: ImageCacherProtocol? = ImageCacher.shared
+    private var imageLoader: ImageDownloaderProtocol = URLSessionImageDownloader()
+    private var imageCache: ImageCacherProtocol = NSCacheImageCacher.shared
     private var currentUrl: URL?
+    
+    func set(imageLoader: ImageDownloaderProtocol) {
+        self.imageLoader = imageLoader
+    }
+    
+    func set(imageCache: ImageCacherProtocol) {
+        self.imageCache = imageCache
+    }
     
     func loadImage(from url: URL, completion: ((UIImage?) -> Void)? = nil) {
         self.image = UIImage(named: "placeholder")
         currentUrl = url
-        if let cachedImage = imageCache?.getImage(for: url) {
+        if let cachedImage = imageCache.getImage(for: url) {
             DispatchQueue.main.async { [weak self] in
                 self?.image = cachedImage
             }
             completion?(cachedImage)
             return
         }
-        imageLoader?.loadImage(from: url) { [weak self] (result) in
+        imageLoader.loadImage(from: url) { [weak self] (result) in
             guard let self = self, url == self.currentUrl else { return }
             switch result {
             case .success(let image):
@@ -32,7 +40,7 @@ class DownloaderImageView: UIImageView {
                         return
                     }
                     self.image = resizedImage
-                    self.imageCache?.setImage(resizedImage, for: url)
+                    self.imageCache.setImage(resizedImage, for: url)
                 }
                 completion?(image)
             case .failure(let error):

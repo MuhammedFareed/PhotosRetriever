@@ -12,9 +12,9 @@ protocol ImageCacherProtocol {
     func setImage(_ image: UIImage, for url: URL)
 }
 
-class ImageCacher: ImageCacherProtocol {
+class NSCacheImageCacher: ImageCacherProtocol {
     
-    static let shared = ImageCacher()
+    static let shared = NSCacheImageCacher()
     
     private let cache = NSCache<NSURL, UIImage>()
     
