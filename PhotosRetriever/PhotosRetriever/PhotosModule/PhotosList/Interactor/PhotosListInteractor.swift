@@ -12,13 +12,18 @@ protocol PhotosListInteractorProtocol {
     func didSelectItemAt(_ index: Int)
 }
 
+protocol PhotosListInteractorDelegateProtocol: AnyObject {
+    func didFinishBuildingItems(_ items: [PhotoListItem])
+    func photoSelected(_ photo: Photo)
+}
+
 class PhotosListInteractor: PhotosListInteractorProtocol {
     let repository: PhotosRepositoryProtocol
     let itemListBuilder: PhotosListBuilderProtocol
     
-    var listItems: [ListItem] = []
+    var listItems: [PhotoListItem] = []
     var currentPageNumber = 1
-    weak var presenter: PhotosListPresenterProtocol?
+    weak var delegate: PhotosListInteractorDelegateProtocol?
     
     init(repository: PhotosRepositoryProtocol = PhotosRepository(), itemListBuilder: PhotosListBuilderProtocol = PhotosListBuilder()) {
         self.repository = repository
@@ -32,7 +37,7 @@ class PhotosListInteractor: PhotosListInteractorProtocol {
             self.currentPageNumber += 1
             let listItems = self.itemListBuilder.buildList(for: fetchedPhotos)
             self.listItems.append(contentsOf: listItems)
-            self.presenter?.displayItems(self.listItems)
+            self.delegate?.didFinishBuildingItems(self.listItems)
         }, onFailure: { error in
             // handle failure case
         })
@@ -43,6 +48,6 @@ class PhotosListInteractor: PhotosListInteractorProtocol {
               item.kind == .photo, let photo = item.photo else {
             return
         }
-        presenter?.showDetailsOf(photo)
+        delegate?.photoSelected(photo)
     }
 }

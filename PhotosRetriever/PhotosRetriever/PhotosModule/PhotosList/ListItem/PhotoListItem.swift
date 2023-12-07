@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ListItem {
+struct PhotoListItem {
     enum Kind {
         case photo
         case ad

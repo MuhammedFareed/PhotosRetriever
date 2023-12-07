@@ -10,22 +10,20 @@ import Foundation
 protocol PhotosListPresenterProtocol: AnyObject {
     func attachView(_ view: PhotosListViewControllerProtocol)
     func fetchPhotos()
-    func displayItems(_ items: [ListItem])
     func didDisplayLastItem()
     func numberOfItems() -> Int
-    func getItem(at index: Int) -> ListItem?
+    func getItem(at index: Int) -> PhotoListItem?
     func didSelectItem(at index: Int)
-    func showDetailsOf(_ photo: Photo)
 }
 
 class PhotosListPresenter: PhotosListPresenterProtocol {
     private let interactor: PhotosListInteractorProtocol
-    private var listItems: [ListItem] = []
+    private var listItems: [PhotoListItem] = []
     private weak var view: PhotosListViewControllerProtocol?
     
     init(withInteractor interactor: PhotosListInteractorProtocol = PhotosListInteractor()) {
         self.interactor = interactor
-        (interactor as? PhotosListInteractor)?.presenter = self
+        (interactor as? PhotosListInteractor)?.delegate = self
     }
     
     func attachView(_ view: PhotosListViewControllerProtocol) {
@@ -36,11 +34,6 @@ class PhotosListPresenter: PhotosListPresenterProtocol {
         interactor.fetchPhotos()
     }
     
-    func displayItems(_ items: [ListItem]) {
-        listItems = items
-        view?.displayItems()
-    }
-    
     func didDisplayLastItem() {
         interactor.fetchPhotos()
     }
@@ -49,7 +42,7 @@ class PhotosListPresenter: PhotosListPresenterProtocol {
         return listItems.count
     }
     
-    func getItem(at index: Int) -> ListItem? {
+    func getItem(at index: Int) -> PhotoListItem? {
         guard let item = listItems[safe: index] else {
             return nil
         }
@@ -60,7 +53,22 @@ class PhotosListPresenter: PhotosListPresenterProtocol {
         interactor.didSelectItemAt(index)
     }
     
-    func showDetailsOf(_ photo: Photo) {
+    private func displayItems(_ items: [PhotoListItem]) {
+        listItems = items
+        view?.displayItems()
+    }
+    
+    private func showDetailsOf(_ photo: Photo) {
         view?.showPhotoDetails(photo)
+    }
+}
+
+extension PhotosListPresenter: PhotosListInteractorDelegateProtocol {
+    func didFinishBuildingItems(_ items: [PhotoListItem]) {
+        displayItems(items)
+    }
+    
+    func photoSelected(_ photo: Photo) {
+        showDetailsOf(photo)
     }
 }
