@@ -15,14 +15,15 @@ class RemotePhotosDataStore: PhotosDataStoreProtocol {
     }
     
     func fetchPhotosList(pageNumber: Int, onSuccess: @escaping ([Photo]) -> Void, onFailure: @escaping (Error?) -> Void) {
-        apiClient.start(withRequest: PhotosRequest.listPhotos(pageNumber: pageNumber), responseType: [Photo].self, onSuccess: { photos in
-            if let photosList = photos as? [Photo] {
-                onSuccess(photosList)
-            } else {
-                onFailure(NetworkError.decodingError)
+        let request = PhotosRequest.listPhotos(pageNumber: pageNumber)
+        Task {
+            let response: RESTAPIResponse<[Photo]> = await apiClient.start(withRequest: request)
+            switch response.result {
+            case let .success(photos):
+                onSuccess(photos)
+            case let .failure(error):
+                onFailure(error)
             }
-        }, onFailure:  { error in
-            onFailure(error)
-        })
+        }
     }
 }

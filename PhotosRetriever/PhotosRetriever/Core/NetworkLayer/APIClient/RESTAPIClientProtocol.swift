@@ -7,52 +7,44 @@
 
 import Foundation
 
-typealias NetworkSuccess = (Codable) -> Void
-typealias NetworkFailure = (Error) -> Void
+struct RESTAPIResponse<T: Codable> {
+    let result: Result<T, NetworkError>
+}
 
 protocol RESTAPICaller {
-    func call<T: Codable>(url: String,withRequest request: APIRequestProtocol, responseType: T.Type, onSuccess: @escaping NetworkSuccess, onFailure: @escaping NetworkFailure)
+    func call<T: Codable>(url: String, withRequest request: APIRequestProtocol) async -> RESTAPIResponse<T>
 }
 
 protocol RESTAPIClient {
     var caller: RESTAPICaller { get set }
     var baseURL: String { get set }
-    func start<T: Codable>(withRequest request: APIRequestProtocol, responseType: T.Type, onSuccess: @escaping NetworkSuccess, onFailure: @escaping NetworkFailure)
+    func start<T: Codable>(withRequest request: APIRequestProtocol) async -> RESTAPIResponse<T>
 }
 
 extension RESTAPIClient {
-    func start<T: Codable>(withRequest request: APIRequestProtocol, responseType: T.Type, onSuccess: @escaping NetworkSuccess, onFailure: @escaping NetworkFailure) {
-        caller.call(url: baseURL, withRequest: request, responseType: responseType, onSuccess: onSuccess, onFailure: onFailure)
+    func start<T: Codable>(withRequest request: APIRequestProtocol) async -> RESTAPIResponse<T> {
+        let result: RESTAPIResponse<T> = await caller.call(url: baseURL, withRequest: request)
+        return result
     }
 }
 
 extension URLSession: RESTAPICaller {
-    func call<T>(url: String, withRequest request: APIRequestProtocol, responseType: T.Type, onSuccess: @escaping NetworkSuccess, onFailure: @escaping NetworkFailure) where T : Decodable, T : Encodable {
-        let url = URL(string: "\(url)/\(request.path)")
-        let urlRequest = NSMutableURLRequest()
-        urlRequest.url = url
+    func call<T: Codable>(url: String, withRequest request: APIRequestProtocol) async -> RESTAPIResponse<T> {
+        guard let url = URL(string: "\(url)/\(request.path)") else {
+            return RESTAPIResponse(result: .failure(NetworkError.invalidURL))
+        }
+        var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.httpMethod.rawValue
         urlRequest.allHTTPHeaderFields = request.headers
         
-        let task = dataTask(with: urlRequest as URLRequest, completionHandler: { data, response, error in
-            if error != nil {
-                onFailure(error!)
-            } else {
-                if let returnedData = data {
-                    do {
-                        let decoder = JSONDecoder()
-                        decoder.keyDecodingStrategy = request.decodingStrategy
-                        let returnedResponse = try decoder.decode(T.self, from: returnedData)
-                        onSuccess(returnedResponse)
-                    } catch {
-                        onFailure(NetworkError.decodingError)
-                    }
-                    onSuccess(returnedData)
-                } else {
-                    onFailure(NetworkError.emptyResponse)
-                }
-            }
-        })
-        task.resume()
+        do {
+            let (data,_) = try await data(for: urlRequest)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = request.decodingStrategy
+            let response = try decoder.decode(T.self, from: data)
+            return RESTAPIResponse(result: .success(response))
+        } catch {
+            return RESTAPIResponse(result: .failure(NetworkError.requestFailed(error: error)))
+        }
     }
 }
